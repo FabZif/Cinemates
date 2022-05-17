@@ -224,7 +224,7 @@ public class HomeFragment extends Fragment {
 
 
                         // Create an S3 client
-                        s3 = new AmazonS3Client(new BasicAWSCredentials( "AKIAIVBKRB4LTN7BISVA", "Nmc8LNTDaIsf1CJpQvazcZRMMk+Y7rldj4yK1hpr" ));
+                        s3 = new AmazonS3Client(new BasicAWSCredentials( "********************", "*********************************" ));
 
                         // Set the region of your S3 bucket
 
