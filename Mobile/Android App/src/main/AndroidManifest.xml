@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.cm">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE " />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
+    
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon_round"
+        android:label="CINEMATES"
+        android:roundIcon="@drawable/icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".View.Activities.Registrazione.VerificaView"></activity>
+        <activity android:name=".View.Activities.ProfiloUtente.ProfiloUtenteNonCollegatoView" />
+        <activity
+            android:name=".View.Activities.Commento.CommentoView"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activities.ProfiloUtente.ProfiloUtenteView"
+            android:label="@string/title_activity_profilo_utente_view" />
+        <activity
+            android:name=".View.Activities.Notifica.NotificaView"
+            android:label="Notifiche" />
+        <activity
+            android:name=".View.Activities.RicercaFilm.RicercaFilmView"
+            android:label="Ricerca Film" />
+        <activity
+            android:name=".View.Activities.Homepage"
+            android:label="@string/title_activity_homepage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".View.Activities.Registrazione.RegistrazioneView" />
+        <activity
+            android:name=".View.Activities.Login.LoginActivity"
+            android:label="Cinemates">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name= "com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

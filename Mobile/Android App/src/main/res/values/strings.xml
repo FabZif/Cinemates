@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">CM</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Email non valida!</string>
+    <string name="invalid_password">La Password deve essere > di 7 caratteri!</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_homepage">Homepage</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_Notify">Notify</string>
+    <string name="action_Search">SearchFilm</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_list">Le mie liste</string>
+    <string name="menu_collegamenti">Collegamenti</string>
+    <string name="menu_info">About us</string>
+    <string name="menu_exit">Exit</string>
+    <string name="title_activity_profilo_utente_view">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
