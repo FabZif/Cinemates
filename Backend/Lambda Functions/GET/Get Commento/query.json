@@ -1,0 +1,7 @@
+{
+    "IdUtente" : "SELECT TestoCommento, Data, IdListaPreferiti, IdListaDaVedere FROM Commento WHERE IdUtente=",
+    "IdPreferiti" : "SELECT TestoCommento, Data,Nickname FROM Commento,Utente WHERE Utente.idUtente=Commento.idUtente AND Commento.IdListaPreferiti=",
+    "IdDaVedere" :  "SELECT TestoCommento, Data, Nickname FROM Commento,Utente WHERE  Utente.idUtente=Commento.idUtente AND Commento.IdListaDaVedere=",
+    "COUNTPreferiti": "SELECT COUNT(idCommento)AS nCommenti FROM Commento WHERE idListaPreferiti=",
+    "COUNTDaVedere": "SELECT COUNT(idCommento)AS nCommenti FROM Commento WHERE idListaDaVedere="
+}

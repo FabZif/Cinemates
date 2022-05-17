@@ -1,0 +1,4 @@
+{
+    "IN" : "INSERT INTO Notifica (Tipo,idDestinatario,Data,idMittente) VALUES",
+    "INJ" : "INSERT INTO Notifica (Tipo,idDestinatario,Data,idAdmin,Testo) VALUES"
+}

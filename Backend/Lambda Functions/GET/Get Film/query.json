@@ -1,0 +1,8 @@
+{
+    "FP" : "SELECT idFilm,Titolo,Descrizione,Immagine FROM Film WHERE idListaPreferiti=",
+    "Comune1Preferiti" : "SELECT idFilm,Titolo,Descrizione,Immagine FROM Film WHERE idListaPreferiti=", 
+    "Comune2Preferiti" : " AND idFilm IN (SELECT idFilm FROM Film WHERE idListaPreferiti=",
+     "FDV" : "SELECT idFilm,Titolo,Descrizione,Immagine FROM Film WHERE idListaDaVedere=",
+    "Comune1DaVedere" : "SELECT idFilm,Titolo,Descrizione,Immagine FROM Film WHERE idListaDaVedere=", 
+    "Comune2DaVedere" : " AND idFilm IN (SELECT idFilm FROM Film WHERE idListaDaVedere="
+}

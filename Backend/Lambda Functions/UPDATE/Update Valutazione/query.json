@@ -1,0 +1,5 @@
+{
+    "UV":"UPDATE Valutazione SET Valutazione=",
+    "UV2": ",Data=",
+    "UV3": " WHERE idValutazione="
+}

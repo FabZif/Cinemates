@@ -1,0 +1,3 @@
+{
+    "IP" : "INSERT INTO ParereRapido (Tipo,Data,idListaDaVedere,idListaPreferiti,idValutatore) VALUES"
+}

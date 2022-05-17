@@ -1,0 +1,5 @@
+{
+    "DF1" : "DELETE FROM Film WHERE idFilm=",
+    "DF2" : " AND idListaPreferiti=",
+    "DF3" : " AND idListaDaVedere="
+}

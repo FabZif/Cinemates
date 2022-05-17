@@ -1,0 +1,9 @@
+{
+    "ID_Valutatore" : "SELECT Valutazione, Data, idListaPreferiti, idListaDaVedere FROM Valutazione WHERE idValutatore=",
+    "ID_DaVedere" : "SELECT idValutazione,Valutazione FROM Utente,Valutazione WHERE Valutazione.idValutatore=Utente.idUtente  AND Valutazione.idListaDaVedere=",
+    "ID_Preferiti" : "SELECT idValutazione,Valutazione FROM Utente,Valutazione WHERE Valutazione.idValutatore=Utente.idUtente AND  Valutazione.idListaPreferiti=",
+    "ID_2":" AND idValutatore=",
+    "AVGPreferiti" : "SELECT AVG(Valutazione) AS media FROM Valutazione WHERE idListaPreferiti=",
+    "AVGDaVedere": "SELECT AVG(Valutazione) AS media FROM Valutazione WHERE idListaDaVedere="
+    
+}

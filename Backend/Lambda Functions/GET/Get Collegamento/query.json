@@ -1,0 +1,4 @@
+{
+    "QA" : "SELECT Immagine,Nickname FROM Utente,Collegamento WHERE Collegamento.idAmico=Utente.idUtente AND idAmico=",
+    "QA2" : " AND Collegamento.idUtente="
+}

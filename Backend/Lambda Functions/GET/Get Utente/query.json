@@ -1,0 +1,6 @@
+{
+    "NN" : "SELECT idUtente,Nome,Cognome,Immagine,Nickname FROM Utente WHERE Nickname REGEXP ",
+    "ID" : "SELECT * FROM Utente WHERE idUtente=",
+    "EM" : "SELECT * FROM Utente WHERE Email=",
+    "FAD" : "SELECT * FROM Utente"
+}

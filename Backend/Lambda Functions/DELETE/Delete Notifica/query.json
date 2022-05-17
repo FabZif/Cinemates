@@ -1,0 +1,3 @@
+{
+    "DN" : "DELETE FROM Notifica WHERE idNotifica="
+}

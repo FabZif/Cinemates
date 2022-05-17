@@ -1,0 +1,4 @@
+{
+    "DC" : "DELETE FROM Collegamento WHERE idAmico=",
+    "DC2": " AND idUtente=" 
+}

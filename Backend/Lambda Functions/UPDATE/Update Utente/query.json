@@ -1,0 +1,4 @@
+{
+    "UPR":"UPDATE Utente SET Immagine=",
+    "UPR3": " WHERE idUtente="
+}

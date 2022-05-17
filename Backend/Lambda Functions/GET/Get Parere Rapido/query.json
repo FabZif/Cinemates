@@ -1,0 +1,7 @@
+{
+    "ID_V" : "SELECT Tipo,Data,idListaDaVedere,idListaPreferiti FROM ParereRapido WHERE idValutatore=",
+    "ID_DV" : "SELECT idValutatore,idListaDaVedere,ParereRapido.Tipo FROM Utente,ParereRapido WHERE ParereRapido.idValutatore=Utente.idUtente AND ParereRapido.idListaDaVedere=", 
+    "ID_P" : "SELECT idValutatore,idListaPreferiti,ParereRapido.Tipo FROM Utente,ParereRapido WHERE ParereRapido.idValutatore=Utente.idUtente AND ParereRapido.idListaPreferiti=",
+    "COUNTPREFERITI" : "SELECT COUNT(idParereRapido) AS NMIPIACE FROM ParereRapido WHERE Tipo=0 AND idListaPreferiti=",
+    "COUNTDAVEDERE" : "SELECT COUNT(idParereRapido) AS NMIPIACE FROM ParereRapido WHERE Tipo=0 AND idListaDaVedere="
+}

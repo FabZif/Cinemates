@@ -1,0 +1,6 @@
+{
+    "QxID" : "SELECT idNotifica,idUtente,idDestinatario,Nickname,Data,Tipo,Immagine,Testo FROM Notifica,Utente WHERE Utente.idUtente=Notifica.idMittente AND idDestinatario=",
+    "SENDER" : "SELECT idNotifica,idUtente,idDestinatario,Nickname,Data,Tipo,Immagine,Testo FROM Notifica,Utente WHERE Utente.idUtente=Notifica.idMittente AND idMittente=",
+    "QxIDA" : "SELECT idNotifica,idDestinatario,Data,Tipo,Immagine,Testo FROM Notifica,Admin WHERE Admin.idAdmin=Notifica.idAdmin AND idDestinatario="
+
+}

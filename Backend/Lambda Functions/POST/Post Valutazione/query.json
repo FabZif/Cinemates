@@ -1,0 +1,3 @@
+{
+    "IV" : "INSERT INTO Valutazione (Valutazione,Data,idValutatore,idListaPreferiti,idListaDaVedere) VALUES"
+}

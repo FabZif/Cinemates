@@ -1,0 +1,153 @@
+CREATE TABLE `Admin` (
+  `idAdmin` int NOT NULL,
+  `Username` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `Immagine` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idAdmin`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+CREATE TABLE `Collegamento` (
+  `idUtente` int NOT NULL,
+  `idAmico` int NOT NULL,
+  `idCollegamento` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`idCollegamento`),
+  UNIQUE KEY `Unique_2` (`idUtente`,`idAmico`),
+  KEY `FK14_idx` (`idUtente`),
+  KEY `FK17` (`idAmico`),
+  CONSTRAINT `FK15` FOREIGN KEY (`idUtente`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FK17` FOREIGN KEY (`idAmico`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `C15` CHECK ((`idUtente` <> `idAmico`))
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+CREATE TABLE `Commento` (
+  `idCommento` int NOT NULL AUTO_INCREMENT,
+  `TestoCommento` varchar(1000) NOT NULL,
+  `Data` datetime NOT NULL,
+  `IdListaPreferiti` int DEFAULT NULL,
+  `IdListaDaVedere` int DEFAULT NULL,
+  `IdUtente` int NOT NULL,
+  PRIMARY KEY (`idCommento`),
+  KEY `FKLP_idx` (`IdListaPreferiti`),
+  KEY `FKU_idx` (`IdUtente`),
+  KEY `FKLDV_idx` (`IdListaDaVedere`),
+  CONSTRAINT `FKLDV` FOREIGN KEY (`IdListaDaVedere`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FKLP` FOREIGN KEY (`IdListaPreferiti`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FKU` FOREIGN KEY (`IdUtente`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `C1` CHECK ((((`IdListaPreferiti` is not null) and (`IdListaDaVedere` is null)) or ((`IdListaPreferiti` is null) and (`IdListaDaVedere` is not null))))
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+
+CREATE TABLE `Film` (
+  `PK` int NOT NULL AUTO_INCREMENT,
+  `idListaPreferiti` int DEFAULT NULL,
+  `idListaDaVedere` int DEFAULT NULL,
+  `idFilm` varchar(45) NOT NULL,
+  `Titolo` varchar(45) NOT NULL,
+  `Descrizione` varchar(10000) NOT NULL,
+  `Immagine` varchar(100) NOT NULL,
+  `DataAggiunta` datetime NOT NULL,
+  PRIMARY KEY (`PK`),
+  UNIQUE KEY `U1` (`idListaDaVedere`,`idFilm`),
+  UNIQUE KEY `U2` (`idListaPreferiti`,`idFilm`),
+  KEY `FK4_idx` (`idListaDaVedere`),
+  KEY `FK5_idx` (`idListaPreferiti`),
+  CONSTRAINT `FK4` FOREIGN KEY (`idListaDaVedere`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FK5` FOREIGN KEY (`idListaPreferiti`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `C9` CHECK ((((`idListaPreferiti` is not null) and (`idListaDaVedere` is null)) or ((`idListaPreferiti` is null) and (`idListaDaVedere` is not null))))
+) ENGINE=InnoDB AUTO_INCREMENT=448 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+
+
+
+
+
+CREATE TABLE `Notifica` (
+  `idNotifica` int NOT NULL AUTO_INCREMENT,
+  `Tipo` int NOT NULL,
+  `idDestinatario` int NOT NULL,
+  `Data` datetime NOT NULL,
+  `idMittente` int DEFAULT NULL,
+  `Testo` varchar(1000) DEFAULT NULL,
+  `idAdmin` int DEFAULT NULL,
+  PRIMARY KEY (`idNotifica`),
+  KEY `FKU4_idx` (`idDestinatario`),
+  KEY `FKU5_idx` (`idMittente`),
+  KEY `FKN1_idx` (`idAdmin`),
+  CONSTRAINT `FKN1` FOREIGN KEY (`idAdmin`) REFERENCES `Admin` (`idAdmin`),
+  CONSTRAINT `FKU4` FOREIGN KEY (`idDestinatario`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FKU5` FOREIGN KEY (`idMittente`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `C12` CHECK ((`idDestinatario` <> `idMittente`)),
+  CONSTRAINT `C2` CHECK (((`Tipo` = 0) or (`Tipo` = 1) or (`Tipo` = 2) or (`Tipo` = 3) or (`Tipo` = 4)))
+) ENGINE=InnoDB AUTO_INCREMENT=820 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE `ParereRapido` (
+  `idParereRapido` int NOT NULL AUTO_INCREMENT,
+  `Tipo` int NOT NULL,
+  `Data` datetime NOT NULL,
+  `idListaDaVedere` int DEFAULT NULL,
+  `idListaPreferiti` int DEFAULT NULL,
+  `idValutatore` int NOT NULL,
+  PRIMARY KEY (`idParereRapido`),
+  KEY `FK6_idx` (`idListaDaVedere`),
+  KEY `FK7_idx` (`idListaPreferiti`),
+  KEY `FK8_idx` (`idValutatore`),
+  CONSTRAINT `FK6` FOREIGN KEY (`idListaDaVedere`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FK7` FOREIGN KEY (`idListaPreferiti`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FK8` FOREIGN KEY (`idValutatore`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `C3` CHECK ((((`idListaDaVedere` is null) and (`idListaPreferiti` is not null)) or ((`idListaDaVedere` is not null) and (`idListaPreferiti` is null)))),
+  CONSTRAINT `ParereRapido_chk_1` CHECK (((`Tipo` = _utf8mb4'0') or (`Tipo` = _utf8mb4'1')))
+) ENGINE=InnoDB AUTO_INCREMENT=130 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+
+CREATE TABLE `Utente` (
+  `idUtente` int NOT NULL AUTO_INCREMENT,
+  `Nome` varchar(45) NOT NULL,
+  `Cognome` varchar(45) NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  `Nickname` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `Immagine` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idUtente`),
+  UNIQUE KEY `Email_UNIQUE` (`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+CREATE TABLE `Valutazione` (
+  `idValutazione` int NOT NULL AUTO_INCREMENT,
+  `Valutazione` float NOT NULL DEFAULT '0',
+  `Data` datetime NOT NULL,
+  `idValutatore` int NOT NULL,
+  `idListaPreferiti` int DEFAULT NULL,
+  `idListaDaVedere` int DEFAULT NULL,
+  PRIMARY KEY (`idValutazione`),
+  KEY `FK10_idx` (`idValutatore`),
+  KEY `FK11_idx` (`idListaDaVedere`),
+  KEY `FK12_idx` (`idListaPreferiti`),
+  CONSTRAINT `FK10` FOREIGN KEY (`idValutatore`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FK11` FOREIGN KEY (`idListaDaVedere`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `FK12` FOREIGN KEY (`idListaPreferiti`) REFERENCES `Utente` (`idUtente`),
+  CONSTRAINT `C4` CHECK ((((`idListaDaVedere` is null) and (`idListaPreferiti` is not null)) or ((`idListaDaVedere` is not null) and (`idListaPreferiti` is null)))),
+  CONSTRAINT `C5` CHECK (((`Valutazione` > 0) or (`Valutazione` < 6)))
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

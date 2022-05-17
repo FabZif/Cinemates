@@ -1,0 +1,5 @@
+{
+    "Q1" : "SELECT Utente.Nickname,Notifica.Tipo,Utente2.Nickname,Notifica.Data,Utente2.Immagine FROM Utente,Notifica,Utente AS Utente2 WHERE Notifica.idMittente=Utente.idUtente AND Notifica.idDestinatario=Utente2.idUtente AND Utente.idUtente=",
+    "Q2" : "SELECT Nickname,Titolo,DataAggiunta,Utente.Immagine AS Immagine FROM Utente,Film WHERE Utente.idUtente=Film.idListaDaVedere AND idListaDaVedere=",
+    "Q3" : "SELECT Nickname,Titolo,DataAggiunta,Utente.Immagine AS Immagine FROM Utente,Film WHERE Utente.idUtente=Film.idListaPreferiti AND idListaPreferiti="
+}

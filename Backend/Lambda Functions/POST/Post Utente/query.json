@@ -1,0 +1,3 @@
+{
+    "IU" : "INSERT INTO Utente (Nome,Cognome,Email,Nickname,Password) VALUES"
+}

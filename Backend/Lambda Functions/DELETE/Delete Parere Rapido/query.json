@@ -1,0 +1,7 @@
+{
+    "ID" : "DELETE FROM ParereRapido WHERE Tipo=",
+    "ID3" : " AND idListaPreferiti=",
+    "ID2" : " AND idValutatore=",
+    "ID4" : " AND idListaDaVedere=",
+    "ID5" : " AND filtro="
+}
